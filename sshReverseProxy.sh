@@ -12,4 +12,4 @@ if ! [ -x "$(which autossh)" ]; then
 fi
 kill -15 `ps aux | grep autossh | awk '{print $2}'`
 echo "Creating ssh proxy redirect from local port: "$sshport" to remote port: "$remoteport" via server: "$server
-`which autossh` -M 0 -f -o ServerAliveInterval=240 -N -R $remoteport:localhost:$sshport $server
+`which autossh` -M 14141 -f -o ServerAliveInterval=240 -N -R $remoteport:localhost:$sshport $server
